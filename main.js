@@ -51,20 +51,19 @@ const teamMember6 = {
 }
 
 //prove
-console.log(teamMember1)
+//console.log(teamMember1)
 
 for (let chiave in teamMember1) {
-    console.log(teamMember1[chiave])
+    //console.log(teamMember1[chiave])
 }
 
 for (let chiave in teamMember1) {
-    console.log(chiave)
+   // console.log(chiave)
 }
 
-
-
-
-// pusho gli oggetti nell array
+/* pusho gli oggetti nell array
+c'è sicuramente un modo migliore di farlo invece di farlo uno per uno come ho fatto io, tra i commenti sotto un idea che non ha funzionato
+*/
 
 /*
 for (i = 1; i <= 6; i++) {
@@ -74,26 +73,35 @@ for (i = 1; i <= 6; i++) {
 
 teamArray.push(teamMember1,teamMember2,teamMember3,teamMember4,teamMember5,teamMember6);
 
-console.log(teamArray);
+//console.log(teamArray);
 
 // stampo info di ogni membro  del team in console e le inserisco nel file HTML
 
+
+// per ogni elemento nel array che contiene gli oggetti
 for (i = 0 ; i < teamArray.length ; i ++) {
 
-
+    // creo un elemento div
     let elDiv = document.createElement("div")
+    //creo un elemento img
+    const elImg = `<img src="img/${teamArray[i].img}">`;
 
 
-
+    // per ogni proprietà che l'oggetto contiene:
     for (let chiave in teamArray[i]) {
         console.log(teamArray[i][chiave])
 
+        //la inserisco nell' elemtno div
         elDiv.append(teamArray[i][chiave] + " - ");
+        //che poi metto nel container
         elContainer.append(elDiv);
+        
     }
+
+    //inserisci elemento img nell'elemento div
+    elDiv.innerHTML += elImg;
 
     console.log(elDiv)
 
     
 }
-
