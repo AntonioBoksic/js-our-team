@@ -91,14 +91,18 @@ for (i = 0 ; i < teamArray.length ; i ++) {
     for (let chiave in teamArray[i]) {
         console.log(teamArray[i][chiave])
 
-        //la inserisco nell' elemtno div
-        elDiv.append(teamArray[i][chiave] + " - ");
-        //che poi metto nel container
-        elContainer.append(elDiv);
+            if (chiave !== "img") {
+            //la inserisco nell' elemtno div
+
+                elDiv.append(teamArray[i][chiave] + " - ");
+                //che poi metto nel container
+                elContainer.append(elDiv);}
+                
+            
         
     }
 
-    //inserisci elemento img nell'elemento div
+    //inserisci elemento img nel div in html
     elDiv.innerHTML += elImg;
 
     console.log(elDiv)
